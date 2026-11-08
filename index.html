@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Helen — Product Designer</title>
+<link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" type="image/svg+xml" href="icon.svg"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="theme-color" content="#F6F2EA"><meta name="description" content="Helen Tazrei — Product designer with an engineer’s mind. B2B SaaS and fintech product design, UX architecture and design leadership.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F6F2EA;--bg2:#EFE9DD;--card:#FBF8F2;--ink:#292622;--mute:#6f6a60;--line:rgba(41,38,34,.14);--ox:#702F35;--sage:#65705D;--clay:#A8794A;--ease:cubic-bezier(.22,1,.36,1);color-scheme:light;
+--serif:"Instrument Serif",Georgia,"Times New Roman",serif;--sans:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1c1a17;--bg2:#24211d;--card:#25221e;--ink:#efe9dd;--mute:#a39d90;--line:rgba(239,233,221,.15);--ox:#d08a92;--sage:#9aa890;--clay:#d1a06e;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1c1a17;--bg2:#24211d;--card:#25221e;--ink:#efe9dd;--mute:#a39d90;--line:rgba(239,233,221,.15);--ox:#d08a92;--sage:#9aa890;--clay:#d1a06e;color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1200px;width:100%;margin:0 auto;padding:0 clamp(22px,5vw,56px)}
+.serif{font-family:var(--serif);font-weight:400;letter-spacing:-.02em}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);display:flex;gap:10px;align-items:center}
+.eyebrow b{color:var(--ox);font-weight:500}
+h2.serif{font-size:clamp(40px,6vw,76px);line-height:1;margin:14px 0 18px}
+em{font-style:italic;color:var(--ox)}
+.rv{opacity:0;transform:translateY(28px);transition:opacity 1s var(--ease),transform 1s var(--ease);transition-delay:var(--d,0s)}
+.rv.in{opacity:1;transform:none}
+#bar{position:fixed;top:0;left:0;height:2px;width:100%;background:var(--ox);transform-origin:0 50%;transform:scaleX(0);z-index:60}
+/* nav */
+nav{position:fixed;top:calc(14px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);z-index:50;display:flex;gap:2px;padding:6px;border:1px solid var(--line);border-radius:999px;background:color-mix(in srgb,var(--bg) 78%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);max-width:calc(100vw - 24px);overflow-x:auto;scrollbar-width:none}
+nav a{padding:8px 14px;border-radius:999px;font-size:14px;color:var(--mute);white-space:nowrap;transition:.4s var(--ease)}
+nav a:hover{color:var(--ink)}
+nav a.on{background:var(--ink);color:var(--bg)}
+nav a.logo{display:flex;align-items:center;padding:0 8px 0 4px;margin-right:4px}nav a.logo:hover{background:none}nav a.logo svg{display:block;transition:transform .6s var(--ease)}nav a.logo:hover svg{transform:rotate(-6deg) scale(1.06)}
+/* hero */
+.hero{min-height:100svh;display:flex;align-items:center;padding:140px 0 80px;position:relative}
+.pill{display:inline-flex;gap:10px;align-items:center;padding:7px 14px;border:1px solid var(--line);border-radius:999px;font-size:13px;color:var(--mute);background:var(--card)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--sage);box-shadow:0 0 0 0 var(--sage);animation:pl 2.4s infinite}
+@keyframes pl{70%{box-shadow:0 0 0 9px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.hero h1{font-size:clamp(52px,9.4vw,136px);line-height:.95;margin:28px 0 28px}
+.hero .sub{max-width:520px;color:var(--mute);font-size:18px}
+.cta{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap}
+.btn{padding:14px 24px;border-radius:999px;font-weight:500;font-size:15px;border:1px solid var(--ink);transition:.5s var(--ease);display:inline-flex;gap:8px}
+.btn.p{background:var(--ink);color:var(--bg)}
+.btn:hover{transform:translateY(-3px);box-shadow:0 12px 24px -12px var(--ink)}
+.btn.p:hover{background:var(--ox);border-color:var(--ox)}
+.float{position:absolute;right:clamp(10px,6vw,90px);top:50%;width:260px;height:300px;pointer-events:none}
+.chip{position:absolute;padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:16px;font-size:13px;box-shadow:0 24px 40px -28px var(--ink);will-change:transform}
+.chip small{display:block;color:var(--mute);font-size:11px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);margin-top:70px}
+.stats div{padding:22px 0;border-right:1px solid var(--line);padding-left:20px}
+.stats div:first-child{padding-left:0}.stats div:last-child{border:0}
+.stats b{font:400 clamp(32px,4vw,52px)/1 var(--serif);display:block}
+.stats span{font-size:13px;color:var(--mute)}
+/* work */
+section{padding:clamp(80px,12vw,160px) 0}
+.work{position:relative;height:calc(100vh + var(--n,3)*70vh);margin-top:20px}.pin{position:sticky;top:0;height:100vh;display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(30px,6vw,90px);align-items:center;padding-top:76px;padding-bottom:30px}#plist{position:relative;height:min(62vh,540px)}.pdots{position:absolute;left:0;bottom:-34px;display:flex;gap:8px}.pdot{width:26px;height:2px;border-radius:2px;background:var(--line);transition:width .7s var(--ease),background .7s}.pdot.on{width:52px;background:var(--ox)}
+.proj{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;opacity:0;visibility:hidden;transform:translateY(26px);transition:opacity .6s var(--ease),transform .8s var(--ease),visibility 0s .6s}
+.proj.on{opacity:1;visibility:visible;transform:none;transition:opacity .8s var(--ease) .2s,transform 1s var(--ease) .2s,visibility 0s}
+.proj .n{font:400 20px var(--serif);color:var(--ox)}
+.proj h3{font:400 clamp(34px,4vw,54px)/1.02 var(--serif);letter-spacing:-.02em;margin:10px 0 14px}
+.proj p{color:var(--mute);max-width:440px}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}
+.tags span{font-size:12px;padding:5px 12px;border:1px solid var(--line);border-radius:99px;color:var(--mute)}
+.out{border-left:2px solid var(--ox);padding-left:14px;font-size:15px;max-width:420px;margin-bottom:22px}
+.lnk{font-weight:500;display:inline-flex;gap:8px;border-bottom:1px solid var(--ink);padding-bottom:3px;width:fit-content;transition:gap .5s var(--ease)}
+.lnk:hover{gap:16px}
+.stick{position:relative;height:min(72vh,660px);align-self:center}
+.screens{position:relative;height:100%;border-radius:28px;background:var(--bg2);border:1px solid var(--line);overflow:hidden}
+.screens .scr{position:absolute;inset:7%;opacity:0;transform:translateY(40px) scale(.96);transition:opacity .9s var(--ease),transform 1.1s var(--ease)}
+.screens .scr.on{opacity:1;transform:none}
+.scr{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:0 40px 70px -40px var(--ink);overflow:hidden;display:flex;flex-direction:column}
+.scr .bar{display:flex;gap:6px;padding:12px 14px;border-bottom:1px solid var(--line)}
+.scr .bar i{width:9px;height:9px;border-radius:50%;background:var(--line)}
+.scr .bd{flex:1;display:grid;grid-template-columns:70px 1fr;min-height:0}
+.scr .sd{border-right:1px solid var(--line);padding:16px 12px;display:grid;gap:10px;align-content:start}
+.scr .sd i{height:8px;border-radius:4px;background:var(--line)}.scr .sd i:first-child{background:var(--a)}
+.scr .mn{padding:18px;display:grid;gap:12px;align-content:start}
+.scr .t{height:16px;width:45%;border-radius:5px;background:var(--ink);opacity:.85}
+.scr .r{display:grid;grid-template-columns:1.2fr 1fr .5fr;gap:10px;align-items:center;padding:10px 12px;border:1px solid var(--line);border-radius:10px}
+.scr .r i{height:8px;border-radius:4px;background:var(--line)}
+.scr .r i:nth-child(2){background:color-mix(in srgb,var(--a) 35%,transparent)}
+.scr .r i:last-child{background:var(--a)}
+.scr .tile{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.scr .tile div{height:62px;border-radius:10px;background:color-mix(in srgb,var(--a) 14%,var(--bg2))}
+.mscr{display:none;margin-top:26px}
+.map .ttl{margin-left:8px;font-size:12px;color:var(--mute)}.map .ttl b{margin-left:10px;font-weight:500;font-size:11px;padding:2px 9px;border-radius:99px;background:color-mix(in srgb,var(--sage) 20%,transparent);color:var(--sage)}
+.map .mp{display:grid;grid-template-columns:1fr 60px 1fr;padding:18px 18px 0;flex:1}
+.map .col{display:flex;flex-direction:column}
+.map small{height:28px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+.map .col span{height:38px;margin-bottom:10px;display:flex;align-items:center;padding:0 12px;border:1px solid var(--line);border-radius:10px;font-size:12px;background:var(--bg2);white-space:nowrap;overflow:hidden}
+.map .col .ok{border-color:color-mix(in srgb,var(--ox) 45%,transparent)}
+.map .col .sg{border-style:dashed;border-color:var(--sage);color:var(--sage)}
+.map svg{width:100%;height:268px}
+.map .ft{display:flex;justify-content:space-between;gap:10px;padding:14px 18px;border-top:1px solid var(--line);font-size:12px;color:var(--mute)}.map .ft em{font-style:normal;color:var(--ox);font-weight:500}
+.mscr .scr{width:100%}
+/* services */
+.svc{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:44px}
+.svc div{background:var(--bg);border:1px solid var(--line);border-radius:22px;padding:30px 24px;min-width:0;transition:background .5s var(--ease),transform .8s var(--ease),opacity 1s var(--ease)}
+.svc div:hover{background:var(--card);transform:translateY(-4px)}
+.svc h4{font:400 26px/1.1 var(--serif);margin:34px 0 10px}
+.svc p{color:var(--mute);font-size:15px}
+.svc .i{font:400 14px var(--sans);color:var(--ox)}
+@media(max-width:1100px){.svc{grid-template-columns:1fr 1fr}}
+/* process */
+.steps{margin-top:44px;border-top:1px solid var(--line)}
+.step{display:grid;grid-template-columns:90px 1fr 1.2fr;gap:24px;padding:34px 0;border-bottom:1px solid var(--line);align-items:baseline;transition:padding .6s var(--ease)}
+.step:hover{padding-left:14px}
+.step span{font:400 22px var(--serif);color:var(--ox)}
+.step h4{font:400 clamp(26px,3vw,38px)/1.1 var(--serif)}
+.step p{color:var(--mute)}
+/* recs */
+.recs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px;align-items:start}
+.rec{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px;transition:transform .6s var(--ease)}
+.rec:hover{transform:translateY(-6px)}
+.rec{min-width:0}
+.rec q{display:block;font:400 23px/1.25 var(--serif);quotes:"“" "”"}
+.nm{border-bottom:1px solid transparent;transition:border-color .4s}.nm:hover{border-color:var(--ink)}
+.rec .full{display:grid;grid-template-rows:0fr;transition:grid-template-rows .7s var(--ease)}
+.rec .full>div{overflow:hidden;color:var(--mute);font-size:15px}
+.rec.open .full{grid-template-rows:1fr}
+.rec.open .full>div{padding-top:14px}
+.rec button{all:unset;cursor:pointer;font-size:13px;color:var(--ox);margin-top:16px;display:block}
+.who{display:flex;gap:12px;align-items:center;margin-top:22px;font-size:14px}
+.av{width:40px;height:40px;border-radius:50%;background:var(--sage);color:#F6F2EA;display:grid;place-items:center;font-size:13px;font-weight:500}
+.who small{display:block;color:var(--mute);font-size:12px}
+.li{font-size:13px;color:var(--mute);margin-top:22px;display:inline-block;border-bottom:1px solid var(--line)}
+/* about */
+.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(30px,6vw,90px);align-items:start}
+.photo{position:relative;aspect-ratio:1;max-width:420px;width:100%;border-radius:50%;overflow:hidden;box-shadow:0 40px 70px -44px var(--ink)}.photo img{width:100%;height:100%;object-fit:cover;display:block}.photo::after{content:"";position:absolute;inset:0;border-radius:50%;box-shadow:inset 0 0 0 1px var(--line)}
+.about p{color:var(--mute);margin-bottom:16px;max-width:560px;font-size:17px}
+.xp{margin-top:30px;border-top:1px solid var(--line)}
+.xp div{display:flex;justify-content:space-between;gap:20px;padding:16px 0;border-bottom:1px solid var(--line);font-size:15px}
+.xp span{color:var(--mute);white-space:nowrap}
+/* contact */
+.contact{background:var(--ink);color:var(--bg);border-radius:36px 36px 0 0;text-align:center;padding:clamp(80px,12vw,150px) 20px 40px}
+.contact h2{font:400 clamp(48px,9vw,128px)/.95 var(--serif);letter-spacing:-.03em}
+.contact em{color:#d08a92}
+.contact .btn{border-color:var(--bg);color:var(--bg);margin:6px}
+.contact .btn.p{background:var(--bg);color:var(--ink)}
+.contact .btn.p:hover{background:#d08a92;border-color:#d08a92}
+.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:100px;font-size:13px;opacity:.6}
+@media(max-width:900px){
+.float{display:none}.stats{grid-template-columns:1fr 1fr}.stats div:nth-child(2){border:0}.stats div:nth-child(3){padding-left:0}
+.work{height:auto}.pin{position:static;height:auto;display:block;padding:0}#plist{height:auto}.pdots{display:none}.stick{display:none}.proj{position:static;opacity:1;visibility:visible;transform:none;padding:40px 0}.mscr{display:flex}
+.svc,.recs{grid-template-columns:1fr}.step{grid-template-columns:50px 1fr}.step p{grid-column:2}.about{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}.dot{animation:none}}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<nav id="nav">
+<a class="logo" href="#top" aria-label="Helen"><svg width="30" height="30" aria-hidden="true" viewBox="0 0 64 64"><rect width="64" height="64" rx="16" fill="#702F35"/><g fill="none" stroke-linecap="round"><path d="M21 17V47M43 17V47" stroke="#F6F2EA" stroke-width="7"/><path d="M21 33H43" stroke="#E3B7BC" stroke-width="5"/></g></svg></a>
+<a href="#top" class="on">Home</a><a href="#work">Work</a><a href="#services">Expertise</a><a href="#recs">Kind words</a><a href="#about">About</a><a href="#contact">Contact</a>
+</nav>
+
+<header class="hero" id="top">
+<div class="wrap">
+<span class="pill rv"><i class="dot"></i>Open to new roles · Remote or on-site</span>
+<h1 class="serif rv" style="--d:.1s">Product designer<br>with an <em>engineer’s</em><br>mind.</h1>
+<p class="sub rv" style="--d:.2s">I’m Helen, a product designer who turns tangled workflows into calm, scalable products, from domain modelling to the last pixel.</p>
+<div class="cta rv" style="--d:.3s"><a class="btn p" href="#work">See selected work ↓</a><a class="btn" href="#contact">Get in touch</a></div>
+<div class="stats rv" style="--d:.4s">
+<div><b>10+</b><span>years in digital product work</span></div>
+<div><b>6+</b><span>product domains, B2B and B2C</span></div>
+<div><b>3</b><span>designers hired and mentored</span></div>
+<div><b>3</b><span>countries’ teams worked with</span></div>
+</div>
+</div>
+<div class="float" aria-hidden="true">
+<div class="chip" data-s=".06" style="top:0;left:30px">Front-end fluent<small>HTML · CSS/SCSS · Bootstrap</small></div>
+<div class="chip" data-s="-.05" style="top:120px;right:0">Remote-committed<small>Distributed teams since 2016</small></div>
+<div class="chip" data-s=".1" style="bottom:0;left:0">Startup-tested<small>0→1 launches</small></div>
+</div>
+</header>
+
+<section id="work"><div class="wrap">
+<div class="eyebrow rv"><b>01</b> Selected work</div>
+<h2 class="serif rv">Case studies on <em>decisions</em>,<br>not just screens.</h2>
+<div class="work" id="workwrap"><div class="pin">
+<div id="plist"></div>
+<div class="stick"><div class="screens" id="screens"></div></div>
+</div></div>
+</div></section>
+
+<section id="services" style="background:var(--bg2)"><div class="wrap">
+<div class="eyebrow rv"><b>02</b> Expertise</div>
+<h2 class="serif rv">What I bring <em>to a team</em></h2>
+<div class="svc">
+<div class="rv"><span class="i">01</span><h4>Product design</h4><p>End-to-end design of complex products, from requirements to high-fidelity UI.</p></div>
+<div class="rv" style="--d:.1s"><span class="i">02</span><h4>Discovery and research</h4><p>Stakeholder interviews, workflow analysis and recurring usability feedback sessions with real users.</p></div>
+<div class="rv" style="--d:.2s"><span class="i">03</span><h4>Systems thinking</h4><p>Modelling entities, states and rules so every screen has a reason to exist.</p></div>
+<div class="rv" style="--d:.3s"><span class="i">04</span><h4>UX architecture</h4><p>Information architecture and workflows for dense, data-heavy tools.</p></div>
+<div class="rv"><span class="i">05</span><h4>Documentation and handoff</h4><p>Well-structured Figma files, user stories and delivery files that engineers and QA can build from.</p></div>
+<div class="rv" style="--d:.1s"><span class="i">06</span><h4>Design systems</h4><p>Component libraries I build, maintain and apply consistently across large products.</p></div>
+<div class="rv" style="--d:.2s"><span class="i">07</span><h4>Design leadership</h4><p>Hired three designers, led a team of up to four and shaped design practices in a development-led team.</p></div>
+<div class="rv" style="--d:.3s"><span class="i">08</span><h4>AI-assisted workflows</h4><p>ChatGPT, Claude, Figma AI and Lovable in exploration, research, critique and documentation.</p></div>
+</div>
+</div></section>
+
+<section id="process"><div class="wrap">
+<div class="eyebrow rv"><b>03</b> How I work</div>
+<h2 class="serif rv">A process that <em>removes</em><br>complexity.</h2>
+<div class="steps">
+<div class="step rv"><span>01</span><h4>Understand the problem</h4><p>I start where the problem needs it: desk research to learn the domain, or a conversation with the product owner, SME or CEO.</p></div>
+<div class="step rv"><span>02</span><h4>Benchmark and explore</h4><p>I study how similar products solve it, even through videos when access is limited, then explore ideas.</p></div>
+<div class="step rv"><span>03</span><h4>Map the flow</h4><p>For complex features I draw the flow early. It sharpens my thinking and travels with the deliverables.</p></div>
+<div class="step rv"><span>04</span><h4>Check feasibility</h4><p>Every feature gets a feasibility check with engineering, lighter for small, well-understood ones, never skipped.</p></div>
+<div class="step rv"><span>05</span><h4>Balance needs and constraints</h4><p>I look past what users say to what they actually need, then weigh it against business and team constraints.</p></div>
+<div class="step rv"><span>06</span><h4>Ship, learn, iterate</h4><p>I design with later iterations in mind, so the product can scale and improve from real user behaviour.</p></div>
+</div>
+</div></section>
+
+<section id="recs" style="background:var(--bg2)"><div class="wrap">
+<div class="eyebrow rv"><b>04</b> Kind words</div>
+<h2 class="serif rv">What colleagues <em>say</em></h2>
+<div class="recs" id="recgrid"></div>
+<a class="li rv" href="https://www.linkedin.com/in/helen-tazrei-885ba2197/" target="_blank" rel="noopener noreferrer">Read all recommendations on LinkedIn ↗</a>
+</div></section>
+
+<section id="about"><div class="wrap about">
+<div class="photo rv"><img src="assets/helen-portrait.webp" alt="Portrait of Helen" width="800" height="800"></div>
+<div>
+<div class="eyebrow rv"><b>05</b> About</div>
+<h2 class="serif rv">Designer by craft,<br><em>engineer</em> by training.</h2>
+<p class="rv">I started as a front-end developer and moved into product design, so I think about how things are built as much as how they look. That helps me design products that engineers can build, QA can verify and users can understand.</p>
+<p class="rv">Over the past decade I’ve worked on compliance, accounting, e-commerce, CRM and consumer products, remotely with teams in the UK, the US and Denmark. Most recently I led product design at Fintranet, a UK-based B2B software company, hiring and mentoring three designers while staying hands-on.</p>
+<div class="xp rv">
+<div>Product Design Lead · Fintranet <span>2022 — 2026</span></div>
+<div>Product / UX/UI Designer · DONO <span>2021 — 2023</span></div>
+<div>UX/UI Designer & Front-end Dev · Rahkarpouya <span>2021 — 2022</span></div>
+<div>Freelance UX/UI Designer & Front-end Dev <span>2016 — 2021</span></div>
+<div>Front-end Developer · Collectia, RT Consult <span>2014 — 2016</span></div>
+<div>M.Sc. Computer Engineering (Software) <span>Education</span></div>
+</div>
+<div class="cta rv"><a class="btn" href="assets/Helen_Tazrei_Resume.pdf" download="Helen_Tazrei_Resume.pdf">Download résumé (PDF) ↓</a></div>
+</div>
+</div></section>
+
+<footer class="contact" id="contact">
+<div class="wrap">
+<div class="eyebrow rv" style="justify-content:center;color:#a39d90">06 Contact</div>
+<h2 class="rv" style="margin:18px 0 34px">Let’s build something <em>clear</em> together.</h2>
+<div class="rv"><a class="btn p" href="mailto:Helen.tazrei@gmail.com" target="_blank" rel="noopener" data-mail>Helen.tazrei@gmail.com</a><a class="btn" href="https://www.linkedin.com/in/helen-tazrei-885ba2197/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a class="btn" href="assets/Helen_Tazrei_Resume.pdf" download="Helen_Tazrei_Resume.pdf">Résumé ↓</a></div>
+<div class="foot"><span>© 2026 Helen. All rights reserved.</span></div>
+</div>
+</footer>
+
+<script>
+var P=[
+{n:"01",t:"Dynamic bank statement mapping",d:"A reusable, versioned template system that lets accounting teams import statements from any bank, without custom development.",g:["B2B","Workflows","System design"],m:1,u:"case-studies/bank-statement-mapping.html",a:"var(--ox)"},
+{n:"02",t:"Next case study",d:"Another case study is on its way.",g:[],a:"var(--sage)"},
+{n:"03",t:"Next case study",d:"Another case study is on its way.",g:[],a:"var(--clay)"}];
+var R=[
+["Sara Pirayesh","Senior Software QA Engineer","SP","One of the most professional and capable people I’ve had the opportunity to work with.","I really enjoyed working closely with Helen at Fintranet. She is genuinely one of the most professional and capable people I’ve had the opportunity to work with.<br><br>What really stands out about her is the combination of strong product design skills with an excellent understanding of both the technical and business sides of a product. She has a great ability to quickly understand requirements and problems, identify what really matters, and come up with practical and effective solutions in a short time.<br><br>She was always very open and receptive to feedback, carefully considering every point and genuinely looking for ways to improve the solution. This made working together incredibly easy and enjoyable.<br><br>Beyond her expertise, she is approachable, positive, and simply great to work with. She communicates clearly, collaborates really well with the team, and brings a level of professionalism and attention to detail that makes a real difference.<br><br>I’m genuinely grateful to have had the opportunity to work with her and learn from her. I would highly recommend Helen to any team looking for a highly skilled, thoughtful, and collaborative Product Designer.","https://www.linkedin.com/in/s-sara-pirayesh/"],
+["Mahmoud Parandeh","Front-end Developer","MP","A strong ability to balance business needs with the technical feasibility of implementation.","I really enjoyed my experience working with Helen. As a Product Designer, Helen has a strong ability to balance business needs with the technical feasibility of implementation. She doesn’t just design features; she thinks them through carefully, making sure they are mature enough to create real value for the business while also being practical and achievable for the development team.<br><br>What I particularly appreciated was how open she was to feedback from the development team. She genuinely listened to our technical perspectives and incorporated them into her designs. This is a quality I have seen in very few Product Designers.<br><br>I would highly recommend Helen to any business looking to bring new value to its products and organization. She is a thoughtful, collaborative, and value-driven Product Designer who understands both the business and technical sides of product development.","https://www.linkedin.com/in/mahmudit88/"],
+["Jalaleddin Hosseini","Senior Frontend Developer","JH","A very experienced Product Design Lead with a great eye for detail.","I had the pleasure of working with Helen for almost four years. She is a very experienced Product Design Lead with a great eye for detail. I really appreciated how she always shared her designs with the team, listened to feedback, and was open to making changes when needed. She also had a great ability to look at things from different perspectives, considering both the end user and the people responsible for implementing the designs.<br><br>Apart from being great at what she does, Helen is a lovely person to work with — friendly, approachable, and well-liked by the team. I really enjoyed working with her and would be happy to recommend her.","https://www.linkedin.com/in/jalaleddin-hosseini/"],
+["Abbas Behjatnia","Senior Software Engineer","AB","A strong ability to understand complex business requirements and translate them into clear, practical, and user-friendly designs.","I had the opportunity to work with Helen for around two years at Fintranet, collaborating closely on a range of fintech and financial features.<br><br>Helen has a strong ability to understand complex business requirements and translate them into clear, practical, and user-friendly designs. She works effectively with development teams, communicates ideas clearly, and takes technical considerations into account throughout the design and implementation process.<br><br>She is thoughtful, detail-oriented, and collaborative, with a good understanding of how to balance user experience, business needs, and technical feasibility. I would be happy to recommend Helen to any team looking for a skilled and reliable Product Designer.","https://www.linkedin.com/in/sae471/"],
+["Amirhossein Beheshti","Back-End Engineer","AB","Her keen eye for detail and understanding of technical limitations, such as database constraints, have been invaluable.","Helen is a highly skilled UI/UX and Product Designer. I’ve had the pleasure of collaborating closely with her on two projects, Fintranet and FintraAccount. Her keen eye for detail and understanding of technical limitations, such as database constraints, have been invaluable. Working closely with our backend team, Helen has consistently delivered innovative and user-centric designs that are both aesthetically pleasing and technically feasible.","https://www.linkedin.com/in/amirhosein-beheshty/"],
+["Behzad Pournajaf","HR Manager, Fintranet","BP","An exceptionally loyal and dedicated professional who takes real ownership of her responsibilities.","I had the pleasure of working with Helen at Fintranet, and what always stood out to me was her genuine commitment to the company and the people around her.<br><br>Helen is an exceptionally loyal and dedicated professional who takes real ownership of her responsibilities. She consistently demonstrated that she cared not only about completing her own work, but also about the success of the product and the wider team.<br><br>Her dedication, reliability, and willingness to support the organisation made her a valued member of our team. I truly appreciated the opportunity to work with Helen and would confidently recommend her to any organisation looking for someone who brings both professional capability and genuine commitment to their work.","https://www.linkedin.com/in/behzad-ashrafi/"]];
+var MAP='<div class="scr map" style="--a:var(--ox)"><div class="bar"><i></i><i></i><i></i><span class="ttl">Statement template<b>v3 · Latest</b></span></div><div class="mp"><div class="col"><small>Statement</small><span>Booking date</span><span>Details</span><span>Money out</span><span>Money in</span><span>Ref no.</span></div><svg viewBox="0 0 60 268" preserveAspectRatio="none" fill="none" stroke="var(--ox)" stroke-width="1.5"><path d="M0 47C30 47 30 95 60 95"/><path d="M0 95C30 95 30 47 60 47"/><path d="M0 143C30 143 30 191 60 191"/><path d="M0 191C30 191 30 143 60 143"/><path d="M0 239H60" stroke="var(--sage)" stroke-dasharray="4 3"/></svg><div class="col"><small>Catalog</small><span class="ok">Narrative</span><span class="ok">Activity date</span><span class="ok">Credit amount</span><span class="ok">Debit amount</span><span class="sg">Reference ✦ Suggested</span></div></div><div class="ft"><span>4 mapped · 1 suggestion to confirm</span><em>Review →</em></div></div>';
+function scr(p){if(p.m)return MAP;return '<div class="scr" style="--a:'+p.a+'"><div class="bar"><i></i><i></i><i></i></div><div class="bd"><div class="sd"><i></i><i></i><i></i><i></i></div><div class="mn"><div class="t"></div><div class="tile"><div></div><div></div></div>'+'<div class="r"><i></i><i></i><i></i></div>'.repeat(3)+'</div></div></div>'}
+var pl=document.getElementById("plist"),sc=document.getElementById("screens");
+P.forEach(function(p,i){
+ pl.insertAdjacentHTML("beforeend",'<article class="proj'+(i?"":" on")+'" data-i="'+i+'"><span class="n">'+p.n+'</span><h3>'+p.t+'</h3><p>'+p.d+'</p><div class="tags">'+p.g.map(function(x){return"<span>"+x+"</span>"}).join("")+'</div>'+(p.u?'<a class="lnk" href="'+p.u+'">Read case study <span>→</span></a>':'<span class="lnk" style="opacity:.55;border:0">Coming soon</span>')+'<div class="mscr" style="display:none"></div></article>');
+ sc.insertAdjacentHTML("beforeend",scr(p));
+});
+sc.children[0].classList.add("on");
+pl.insertAdjacentHTML("beforeend",'<div class="pdots">'+P.map(function(){return'<i class="pdot"></i>'}).join("")+'</div>');pl.querySelector(".pdot").classList.add("on");
+var mq=matchMedia("(max-width:900px)");
+function fillM(){document.querySelectorAll(".mscr").forEach(function(m,i){m.style.display=mq.matches?"flex":"none";if(!m.innerHTML)m.innerHTML=scr(P[i]).replace('class="scr"','class="scr" style="position:static;opacity:1;transform:none;width:100%;--a:'+P[i].a+'"')})}
+fillM();mq.addEventListener("change",fillM);
+var ww=document.getElementById("workwrap"),cur=-1;ww.style.setProperty("--n",P.length);
+function setA(i){if(i===cur)return;cur=i;document.querySelectorAll(".proj").forEach(function(x,k){x.classList.toggle("on",k==i)});[].forEach.call(sc.children,function(x,k){x.classList.toggle("on",k==i)});document.querySelectorAll(".pdot").forEach(function(x,k){x.classList.toggle("on",k==i)})}
+function wk(){if(mq.matches)return;var r=ww.getBoundingClientRect(),t=r.height-innerHeight,p=t>0?Math.min(Math.max(-r.top/t,0),.999):0;setA(Math.floor(p*P.length))}
+var rc=document.getElementById("recgrid");
+R.forEach(function(r,i){rc.insertAdjacentHTML("beforeend",'<div class="rec rv" style="--d:'+(i%3)*.1+'s"><q>'+r[3]+'</q><div class="full"><div>'+r[4]+'</div></div><button>Read full quote ↓</button><div class="who"><span class="av">'+r[2]+'</span><div><a class="nm" href="'+r[5]+'" target="_blank" rel="noopener noreferrer">'+r[0]+'</a><small>'+r[1]+'</small></div></div></div>')});
+rc.addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;var c=b.closest(".rec");c.classList.toggle("open");b.textContent=c.classList.contains("open")?"Show less ↑":"Read full quote ↓"});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll(".rv").forEach(function(x){io.observe(x)});
+var links=[].slice.call(document.querySelectorAll("#nav a:not(.logo)")),ids=["top","work","services","recs","about","contact"];
+var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var k=ids.indexOf(e.target.id);if(k<0)k=1;links.forEach(function(l,j){l.classList.toggle("on",j==k)})}})},{rootMargin:"-45% 0px -50% 0px"});
+ids.forEach(function(i){so.observe(document.getElementById(i))});
+so.observe(document.getElementById("process"));
+var bar=document.getElementById("bar"),ch=[].slice.call(document.querySelectorAll(".chip")),tk=false;
+function tick(){wk();var y=scrollY,h=document.documentElement.scrollHeight-innerHeight;bar.style.transform="scaleX("+(h>0?y/h:0)+")";ch.forEach(function(c){c.style.transform="translateY("+(y*c.dataset.s*-1)+"px)"});tk=false}
+addEventListener("scroll",function(){if(!tk){tk=true;requestAnimationFrame(tick)}},{passive:true});tick();
+document.querySelectorAll("[data-mail]").forEach(function(a){a.addEventListener("click",function(){var t=a.textContent;try{navigator.clipboard.writeText("Helen.tazrei@gmail.com").then(function(){a.textContent="Email copied ✓";setTimeout(function(){a.textContent=t},2200)}).catch(function(){})}catch(x){}})});
+</script>
+</body>
+</html>
