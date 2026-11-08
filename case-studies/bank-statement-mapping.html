@@ -192,6 +192,20 @@ nav.top a:hover{color:var(--ink)}nav.top a.back{background:var(--ink);color:var(
 .demo h2{color:var(--bg);margin:0 0 10px;font-size:clamp(30px,4vw,48px);max-width:none}
 .demo p{margin:0;opacity:.78;max-width:50ch;font-size:16px}
 .demo .btn{background:var(--bg);color:var(--ink);border-color:var(--bg);margin:0}.demo .btn:hover{background:var(--acc);border-color:var(--acc);color:#F6F2EA}
+.shots{perspective:1800px;margin:36px 0 40px}
+.sh{border:0;border-radius:12px;box-shadow:0 34px 60px -34px rgba(41,38,34,.5);will-change:transform;transform:translateY(var(--py,0px))}
+.sh.a::before,.sh.b::before{content:"";display:block;height:16px;background-color:#EFE9DD;border-bottom:1px solid var(--line);background-image:radial-gradient(circle at 12px 8px,#d8cfbf 3px,transparent 3.5px),radial-gradient(circle at 26px 8px,#d8cfbf 3px,transparent 3.5px),radial-gradient(circle at 40px 8px,#d8cfbf 3px,transparent 3.5px)}
+.sh.a{transform:translateY(var(--py,0px)) rotateY(12deg);transform-origin:right center}
+.sh.b{transform:translateY(var(--py,0px)) rotateY(-12deg);transform-origin:left center}
+.sh.c{overflow:visible;background:#1d1b19;padding:9px;border-radius:16px 16px 5px 5px;box-shadow:0 50px 80px -40px rgba(41,38,34,.65)}
+.sh.c img{border-radius:8px}
+.sh.c::after{content:"";position:absolute;left:-5%;right:-5%;bottom:-17px;height:15px;border-radius:0 0 22px 22px;background:linear-gradient(#d9d1c2,#b3a995);box-shadow:0 18px 30px -14px rgba(41,38,34,.5)}
+.board.stack{aspect-ratio:16/6.6}
+.lh{display:block;font:700 1.15em/1 Georgia,serif;letter-spacing:.14em;margin:0 0 .9em;color:#702F35}.lh.h2{color:#292622}.lh.h3{color:#65705D}
+.ln{display:block;height:.45em;border-radius:.2em;background:#e5dfd1;margin:.45em 0}.ln.w{width:60%}
+.an{position:absolute;right:4%;top:12%;font:500 2.5em/1.05 Caveat,cursive;color:var(--acc);transform:rotate(-4deg);max-width:6.5em}
+.an svg{display:block;width:3.4em;margin:.1em 0 0 -.6em;stroke:var(--acc);fill:none;stroke-width:2;stroke-linecap:round}
+@media(prefers-reduced-motion:reduce){.sh{transform:none!important}}
 </style>
 </head>
 <body>
@@ -252,6 +266,13 @@ nav.top a:hover{color:var(--ink)}nav.top a.back{background:var(--ink);color:var(
 <p class="lead">Supporting a new statement format depended on the engineering team.</p>
 <p>FintraAccount could import bank statements, but support relied on predefined formats. As institutions and formats changed, the same type of request could repeatedly return to Product, Design and Engineering. At times a request to add a new bank statement or change an existing format arrived only two days after the previous one, and after one wave of bank changes around ten formats needed support at once.</p>
 <p>The system worked — but the way it adapted did not scale.</p>
+<figure class="bf" aria-label="Statements from different banks laid out in different structures"><div class="board stack">
+<div class="pp" style="left:4%;top:14%;width:28%;--r:-5deg"><b class="lh">NORTHGATE BANK</b><i class="ln"></i><i class="ln w"></i><table><tr><th>Date</th><th>Description</th><th>Amount</th></tr><tr><td>01/03</td><td>Transfer</td><td>+1,250.00</td></tr><tr><td>03/03</td><td>Payment</td><td>-200.00</td></tr></table></div>
+<div class="pp s" style="left:27%;top:7%;width:31%;--r:2deg;z-index:2"><b class="lh h2">HARBOR &amp; CO.</b><i class="ln"></i><i class="ln w"></i><table><tr><th>Date</th><th>Details</th><th>Debit</th><th>Credit</th></tr><tr><td>01/03</td><td>Transfer</td><td></td><td>1,250.00</td></tr><tr><td>03/03</td><td>Payment</td><td>200.00</td><td></td></tr></table></div>
+<div class="pp mono" style="left:52%;top:20%;width:22%;--r:6deg;z-index:3"><b class="lh h3">MERIDIAN</b>Txn 40127<br>Value 01.03.25<br>Amount <mark>1.250,00</mark><br>Dr / Cr <mark class="g">Cr</mark></div>
+<div class="an">Different formats.<br>Same financial meaning.<svg viewBox="0 0 60 40" aria-hidden="true"><path d="M52 4C44 22 26 30 8 26"/><path d="M16 19 8 26l9 5"/></svg></div>
+</div></figure>
+
 <div class="two">
 <div class="note"><b>For customers.</b> Wait for a release before a new format works.</div>
 <div class="note"><b>For the team.</b> Recurring design and engineering capacity spent on variations of the same problem.</div>
@@ -470,7 +491,12 @@ var bar=document.getElementById("bar"),tk=false;
 addEventListener("scroll",function(){if(!tk){tk=true;requestAnimationFrame(function(){var h=document.documentElement.scrollHeight-innerHeight;bar.style.transform="scaleX("+(h>0?scrollY/h:0)+")";tk=false})}},{passive:true});
 var links=[].slice.call(document.querySelectorAll("nav.top a[href^='#']"));
 var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(l){l.classList.toggle("on",l.getAttribute("href")==="#"+e.target.id)})}})},{rootMargin:"-40% 0px -55% 0px"});
-links.forEach(function(l){var t=document.querySelector(l.getAttribute("href"));if(t)so.observe(t)});})();
+links.forEach(function(l){var t=document.querySelector(l.getAttribute("href"));if(t)so.observe(t)});
+var hs=document.querySelector(".shots");
+if(hs&&!matchMedia("(prefers-reduced-motion:reduce)").matches){var ts=false,sa=hs.querySelector(".sh.a"),sb=hs.querySelector(".sh.b"),sc=hs.querySelector(".sh.c");
+var pr=function(){var r=hs.getBoundingClientRect(),q=Math.max(-1,Math.min(1,(r.top+r.height/2-innerHeight/2)/innerHeight));sa.style.setProperty("--py",(q*-26)+"px");sb.style.setProperty("--py",(q*-26)+"px");sc.style.setProperty("--py",(q*14)+"px");ts=false};
+addEventListener("scroll",function(){if(!ts){ts=true;requestAnimationFrame(pr)}},{passive:true});pr()}
+})();
 </script>
 </body>
 </html>
