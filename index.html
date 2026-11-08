@@ -43,10 +43,10 @@ nav a.logo{display:flex;align-items:center;padding:0 8px 0 4px;margin-right:4px}
 .btn.p{background:var(--ink);color:var(--bg)}
 .btn:hover{transform:translateY(-3px);box-shadow:0 12px 24px -12px var(--ink)}
 .btn.p:hover{background:var(--ox);border-color:var(--ox)}
-.float{position:absolute;right:clamp(10px,6vw,90px);top:50%;width:260px;height:300px;pointer-events:none}
+.float{position:absolute;right:clamp(10px,6vw,90px);top:calc(50% - 60px);width:260px;height:360px;pointer-events:none}
 .chip{position:absolute;padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:16px;font-size:13px;box-shadow:0 24px 40px -28px var(--ink);will-change:transform}
 .chip small{display:block;color:var(--mute);font-size:11px}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);margin-top:70px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line);margin-top:70px}
 .stats div{padding:22px 0;border-right:1px solid var(--line);padding-left:20px}
 .stats div:first-child{padding-left:0}.stats div:last-child{border:0}
 .stats b{font:400 clamp(32px,4vw,52px)/1 var(--serif);display:block}
@@ -150,7 +150,7 @@ section{padding:clamp(80px,12vw,160px) 0}
 .contact .btn.p:hover{background:#d08a92;border-color:#d08a92}
 .foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:100px;font-size:13px;opacity:.6}
 @media(max-width:900px){
-.float{display:none}.stats{grid-template-columns:1fr 1fr}.stats div:nth-child(2){border:0}.stats div:nth-child(3){padding-left:0}
+.float{display:none}.stats div{padding-left:12px}.stats div:first-child{padding-left:0}
 .work{height:auto}.pin{position:static;height:auto;display:block;padding:0}#plist{height:auto}.pdots{display:none}.stick{display:none}.proj{position:static;opacity:1;visibility:visible;transform:none;padding:40px 0}.mscr{display:flex}
 .svc,.recs{grid-template-columns:1fr}.step{grid-template-columns:50px 1fr}.step p{grid-column:2}.about{grid-template-columns:1fr}
 }
@@ -173,14 +173,14 @@ section{padding:clamp(80px,12vw,160px) 0}
 <div class="stats rv" style="--d:.4s">
 <div><b>10+</b><span>years in digital product work</span></div>
 <div><b>6+</b><span>product domains, B2B and B2C</span></div>
-<div><b>3</b><span>designers hired and mentored</span></div>
 <div><b>3</b><span>countries’ teams worked with</span></div>
 </div>
 </div>
 <div class="float" aria-hidden="true">
 <div class="chip" data-s=".06" style="top:0;left:30px">Front-end fluent<small>HTML · CSS/SCSS · Bootstrap</small></div>
-<div class="chip" data-s="-.05" style="top:120px;right:0">Remote-committed<small>Distributed teams since 2016</small></div>
-<div class="chip" data-s=".1" style="bottom:0;left:0">Startup-tested<small>0→1 launches</small></div>
+<div class="chip" data-s="-.05" style="top:100px;right:0">Remote-committed<small>Distributed teams since 2016</small></div>
+<div class="chip" data-s=".1" style="top:200px;left:0">Startup-tested<small>0→1 launches</small></div>
+<div class="chip" data-s="-.08" style="top:300px;right:10px">End-to-end ownership<small>Discovery to implementation review</small></div>
 </div>
 </header>
 
@@ -216,7 +216,7 @@ section{padding:clamp(80px,12vw,160px) 0}
 <div class="step rv"><span>02</span><h4>Benchmark and explore</h4><p>I study how similar products solve it, even through videos when access is limited, then explore ideas.</p></div>
 <div class="step rv"><span>03</span><h4>Map the flow</h4><p>For complex features I draw the flow early. It sharpens my thinking and travels with the deliverables.</p></div>
 <div class="step rv"><span>04</span><h4>Check feasibility</h4><p>Every feature gets a feasibility check with engineering, lighter for small, well-understood ones, never skipped.</p></div>
-<div class="step rv"><span>05</span><h4>Balance needs and constraints</h4><p>I look past what users say to what they actually need, then weigh it against business and team constraints.</p></div>
+<div class="step rv"><span>05</span><h4>Balance needs and constraints</h4><p>I look beyond stated requests to understand underlying needs, then balance them with business goals and technical constraints.</p></div>
 <div class="step rv"><span>06</span><h4>Ship, learn, iterate</h4><p>I design with later iterations in mind, so the product can scale and improve from real user behaviour.</p></div>
 </div>
 </div></section>
@@ -259,8 +259,8 @@ section{padding:clamp(80px,12vw,160px) 0}
 <script>
 var P=[
 {n:"01",t:"Dynamic bank statement mapping",d:"A reusable, versioned template system that lets accounting teams import statements from any bank, without custom development.",g:["B2B","Workflows","System design"],m:1,u:"case-studies/bank-statement-mapping.html",a:"var(--ox)"},
-{n:"02",t:"Next case study",d:"Another case study is on its way.",g:[],a:"var(--sage)"},
-{n:"03",t:"Next case study",d:"Another case study is on its way.",g:[],a:"var(--clay)"}];
+{n:"02",t:"Next case study",d:"Currently in development. More work coming soon.",g:[],a:"var(--sage)"},
+{n:"03",t:"Next case study",d:"Currently in development. More work coming soon.",g:[],a:"var(--clay)"}];
 var R=[
 ["Sara Pirayesh","Senior Software QA Engineer","SP","One of the most professional and capable people I’ve had the opportunity to work with.","I really enjoyed working closely with Helen at Fintranet. She is genuinely one of the most professional and capable people I’ve had the opportunity to work with.<br><br>What really stands out about her is the combination of strong product design skills with an excellent understanding of both the technical and business sides of a product. She has a great ability to quickly understand requirements and problems, identify what really matters, and come up with practical and effective solutions in a short time.<br><br>She was always very open and receptive to feedback, carefully considering every point and genuinely looking for ways to improve the solution. This made working together incredibly easy and enjoyable.<br><br>Beyond her expertise, she is approachable, positive, and simply great to work with. She communicates clearly, collaborates really well with the team, and brings a level of professionalism and attention to detail that makes a real difference.<br><br>I’m genuinely grateful to have had the opportunity to work with her and learn from her. I would highly recommend Helen to any team looking for a highly skilled, thoughtful, and collaborative Product Designer.","https://www.linkedin.com/in/s-sara-pirayesh/"],
 ["Mahmoud Parandeh","Front-end Developer","MP","A strong ability to balance business needs with the technical feasibility of implementation.","I really enjoyed my experience working with Helen. As a Product Designer, Helen has a strong ability to balance business needs with the technical feasibility of implementation. She doesn’t just design features; she thinks them through carefully, making sure they are mature enough to create real value for the business while also being practical and achievable for the development team.<br><br>What I particularly appreciated was how open she was to feedback from the development team. She genuinely listened to our technical perspectives and incorporated them into her designs. This is a quality I have seen in very few Product Designers.<br><br>I would highly recommend Helen to any business looking to bring new value to its products and organization. She is a thoughtful, collaborative, and value-driven Product Designer who understands both the business and technical sides of product development.","https://www.linkedin.com/in/mahmudit88/"],
@@ -275,7 +275,7 @@ function setL(k){document.querySelectorAll(".lap").forEach(function(l){l.querySe
 function scr(p){if(p.m)return lap();return '<div class="scr" style="--a:'+p.a+'"><div class="bar"><i></i><i></i><i></i></div><div class="bd"><div class="sd"><i></i><i></i><i></i><i></i></div><div class="mn"><div class="t"></div><div class="tile"><div></div><div></div></div>'+'<div class="r"><i></i><i></i><i></i></div>'.repeat(3)+'</div></div></div>'}
 var pl=document.getElementById("plist"),sc=document.getElementById("screens");
 P.forEach(function(p,i){
- pl.insertAdjacentHTML("beforeend",'<article class="proj'+(i?"":" on")+'" data-i="'+i+'"><span class="n">'+p.n+'</span><h3>'+p.t+'</h3><p>'+p.d+'</p><div class="tags">'+p.g.map(function(x){return"<span>"+x+"</span>"}).join("")+'</div>'+(p.u?'<a class="lnk" href="'+p.u+'">Read case study <span>→</span></a>':'<span class="lnk" style="opacity:.55;border:0">Coming soon</span>')+'<div class="mscr" style="display:none"></div></article>');
+ pl.insertAdjacentHTML("beforeend",'<article class="proj'+(i?"":" on")+'" data-i="'+i+'"><span class="n">'+p.n+'</span><h3>'+p.t+'</h3><p>'+p.d+'</p><div class="tags">'+p.g.map(function(x){return"<span>"+x+"</span>"}).join("")+'</div>'+(p.u?'<a class="lnk" href="'+p.u+'">Read case study <span>→</span></a>':'')+'<div class="mscr" style="display:none"></div></article>');
  sc.insertAdjacentHTML("beforeend",scr(p));
 });
 sc.children[0].classList.add("on");
